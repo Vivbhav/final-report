@@ -42,6 +42,54 @@
 %_____________________________________________________________________________________________ 
 % Main report starts here
 %_____________________________________________________________________________________________ 
+%\def\LT@c@ption#1[#2]#3{%
+%  \LT@makecaption#1\fnum@table{#3}%
+%  \def\@tempa{#2}%
+%  \ifx\@tempa\@empty\else
+%     {\let\\\space
+%     \addcontentsline{lot}{table}{\protect\numberline{\thetable}{#2}}}%
+%  \fi}
+
+
+%\makeatletter
+%\def\LT@c@ption#1[#2]#3{%
+%  \LT@makecaption#1\fnum@table{#3}%
+%  \def\@tempa{#2}%
+%  \ifx\@tempa\@empty\else
+%     {\let\\\space
+%     \addcontentsline{lot}{table}{\protect\numberline{Table \thetable.}{#2}}}%
+%  \fi}
+%\makeatother
+
+
+\setlength\LTcapwidth{\textwidth}
+
+\makeatletter
+  \def\LT@makecaption#1#2#3{%
+    \LT@mcol\LT@cols c{\hbox to\z@{\hss\parbox[t]\LTcapwidth{%
+    \vskip\abovecaptionskip
+    \centering{
+      \sbox\@tempboxa{#1{#2 }#3}%
+      \ifdim\wd\@tempboxa>\hsize
+        #1{#2. }#3%
+      \else
+        \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+      \fi
+      \endgraf\vskip\baselineskip}}%
+    \hss}}}
+\makeatother
+
+\makeatletter
+  \def\LT@c@ption#1[#2]#3{%
+    \LT@makecaption#1\fnum@table{#3}%
+    \def\@tempa{#2}%
+    \ifx\@tempa\@empty\else
+    {\let\\\space
+      \addcontentsline{lot}{table}{\protect\numberline{\thetable}{\ignorespaces #2}\vspace\baselineskip}%
+    }%
+    \fi
+  }
+\makeatother
 
 \begin{document}	% Start of Report
 %_____________________________________________________________________________________________ 
@@ -55,6 +103,8 @@
 \input{abstract.tex}	% Absract: Independently typeset in file abstract.tex
 
 \thispagestyle{empty}
+
+
 \tableofcontents		% *Generate* the table of contents. No content - no table
 				% LATEX needs to run 2-3 times over source to get this correct
 
