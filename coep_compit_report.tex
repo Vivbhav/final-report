@@ -62,34 +62,34 @@
 %\makeatother
 
 
-\setlength\LTcapwidth{\textwidth}
-
-\makeatletter
-  \def\LT@makecaption#1#2#3{%
-    \LT@mcol\LT@cols c{\hbox to\z@{\hss\parbox[t]\LTcapwidth{%
-    \vskip\abovecaptionskip
-    \centering{
-      \sbox\@tempboxa{#1{#2 }#3}%
-      \ifdim\wd\@tempboxa>\hsize
-        #1{#2. }#3%
-      \else
-        \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
-      \fi
-      \endgraf\vskip\baselineskip}}%
-    \hss}}}
-\makeatother
-
-\makeatletter
-  \def\LT@c@ption#1[#2]#3{%
-    \LT@makecaption#1\fnum@table{#3}%
-    \def\@tempa{#2}%
-    \ifx\@tempa\@empty\else
-    {\let\\\space
-      \addcontentsline{lot}{table}{\protect\numberline{\thetable}{\ignorespaces #2}\vspace\baselineskip}%
-    }%
-    \fi
-  }
-\makeatother
+%\setlength\LTcapwidth{\textwidth}
+%
+%\makeatletter
+%  \def\LT@makecaption#1#2#3{%
+%    \LT@mcol\LT@cols c{\hbox to\z@{\hss\parbox[t]\LTcapwidth{%
+%    \vskip\abovecaptionskip
+%    \centering{
+%      \sbox\@tempboxa{#1{#2 }#3}%
+%      \ifdim\wd\@tempboxa>\hsize
+%        #1{#2. }#3%
+%      \else
+%        \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+%      \fi
+%      \endgraf\vskip\baselineskip}}%
+%    \hss}}}
+%\makeatother
+%
+%\makeatletter
+%  \def\LT@c@ption#1[#2]#3{%
+%    \LT@makecaption#1\fnum@table{#3}%
+%    \def\@tempa{#2}%
+%    \ifx\@tempa\@empty\else
+%    {\let\\\space
+%      \addcontentsline{lot}{table}{\protect\numberline{\thetable}{\ignorespaces #2}\vspace\baselineskip}%
+%    }%
+%    \fi
+%  }
+%\makeatother
 
 \begin{document}	% Start of Report
 %_____________________________________________________________________________________________ 
@@ -126,6 +126,12 @@
 				% files. There only typesetting tags are required.
 \input{chapter_2.tex}		
 \input{chapter_3.tex}		
+\input{chapter_4.tex}		
+\input{chapter_5.tex}		
+\input{chapter_6.tex}		
+\input{chapter_7.tex}		
+\input{chapter_8.tex}		
+\input{chapter_n.tex}		
 
 \appendix
 \chapter{Algorithm}
