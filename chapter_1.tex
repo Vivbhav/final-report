@@ -34,7 +34,11 @@ between the neurons are modelled as weights and the final value that the neuron
 stores is the weighted summation of all the inputs. A neural network consists of
 an input layer, an output layer and multiple hidden layers.
 
-%TODO IMG
+\begin{figure}
+	\caption{Basic Neural Network Diagram}
+	\centering\includegraphics[width=10cm]{1.png}
+\end{figure}
+
 \section{Recurrent Neural Networks (RNN)}
 
 Recurrent neural network is a type of artificial neural network. The problem of
@@ -45,7 +49,10 @@ precise predictions about what’s coming next. This is why they are preferred
 algorithm for sequential data. Sequential data is just ordered data where
 related things follow each other.
 
-%TODO IMG
+\begin{figure}
+	\caption{Recurrent vs Feed-forward Neural Network}
+	\centering\includegraphics[width=10cm]{2.png}
+\end{figure}
 
 Unlike the normal feedforward neural networks, recurrent neural networks feed
 the output of previous step to the current step. This helps the network to
@@ -66,7 +73,10 @@ visualization and conceptual tool, which helps you to understand what’s going 
 within the network. RNN can be viewed as a sequence of Neural Networks that is
 trained one after another with backpropagation.
 
-%TODO IMG
+\begin{figure}
+	\caption{Structure of a Neuron}
+	\centering\includegraphics[width=10cm]{3.png}
+\end{figure}
 
 The above diagram shows the RNN being unrolled after the equal sign. The
 different timesteps are visualized and information gets passed from one timestep
@@ -106,7 +116,10 @@ whether or not to store or delete information based on the importance it assigns
 to the information. The importance assigning takes place through weights which
 are learned through the algorithm.
 
-%TODO IMG
+\begin{figure}
+	\caption{Structure of a Basic LSTM node}
+	\centering\includegraphics[width=10cm]{4.png}
+\end{figure}
 
 A basic LSTM node consists of input gate, output gate and forget gate. The input
 gate decides whether or not to let new input in. The forget gate deletes the
