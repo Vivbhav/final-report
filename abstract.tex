@@ -9,31 +9,13 @@
 \begin{center}
 \Large \textbf{Abstract}
 \end{center}
-	Chatbots are proving themselves quite useful now a days. Chatbots like
-	Siri(iOS), Google Assistant(Android), Google Allo (Cross Platform),
-	Cortana (Windows), Amazon Alexa and many more, are used daily by many
-	people, in various parts of world. These chatbots help us accomplish
-	many daily tasks like finding a location, booking a table at restaurant,
-	calling someone, etc. 
-	
-	These chatbots are all open domain chatbots, i.e. they can be used for
-	general purpose  tasks. But they are unable to perform specific tasks
-	like answering questions which are specific to industry, education, or
-	an organization. Such chatbots are called as closed domain chatbots.
-	Many companies deploy such chatbots on their website to answer specific
-	questions related to them. Most of the replies are pre-fed and if any
-	new query comes to the chatbot, it either sends the query to the
-	company’s concerned authority for a reply or straight away ignores the
-	question.
-	
-	We will be focusing on how to build an open domain end-to-end
-	conversation model for chatbots which shall test the users on their
-	knowledge on any arbitrary topic they choose. The method used for open
-	domain chatbots can be applied for closed domain chatbots as well if
-	relevant data on that domain is available. The only problem faced by
-	closed domain chatbots is that they lack datasets for development,
-	whereas lots of data is available for open domain chatbots. 
+Asking questions to students has always been regarded as the best method to gauge the students learning capabilities. However, with the amount of content available, generating questions from domain experts, is a time consuming and expensive process. 
 
+The task of Automatic Question Generation(AQG) aims to generate questions from a given piece of text which shall appropriately test the students mastery over the material. Plenty of research in the area of AQG has been done over the years. The current state of the art models use a bidirectional Long Short Term Memory encoder decoder system to solve the problem. The work presented here carries out an important task in one of the stages of the entire AQG system. 
+
+The model we have designed takes the sentence to generate questions on, as input, and tags a few words of the sentence as answer words on which questions can be created. The model has been trained using the SQUAD and Google datasets. The model has been created using LSTM networks and other linear layer neural networks. 
+
+As a part of the system, we also built a custom web crawler. On input of a specific topic to the crawler, it can find a list of relevant web pages and is also able to filter in the important content from those webpages. Thus, this is an end to end system, which can be used in many areas like education, quizzing, entertainment, etc. 
 %\end{abstract}
 
 %_____________________________________________________________________________________________ 
