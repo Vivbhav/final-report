@@ -70,15 +70,29 @@ helping in predicting the current tag.
 
 \begin{itemize}
 
-\item Context Reader and EncoderContext reader is a bi-directional long
-short-term memory (bi-LSTM) network with 600 hidden layers. It processes the
-input words in both the forward and backward direction.
+	\item \textbf{Context Reader and Encoder}
 
-\item Attention network
+Context reader is a bi-directional long short-term memory (bi-LSTM) network with
+		600 hidden layers. Bi-LSTM processes the input words in both the
+		forward and backward direction. Encoder creates context word
+		vectors from the preprocessed input provided.
 
-\item Sigmoid activation for encoder
+\item \textbf{Decoder and Softmax activation}
 
-\item Decoder - rnn lstm 600 hidden layer
+	The question-generator generates a question word one-by-one by following
+		two internal calculations. The unidirectional LSTM in the
+		decoder maps the current question word with fixed-sized vector,
+		which is the hidden state of the network. Then the second
+		calculation, i.e. the softmax function calculates the
+		probability distribution over all words from a fixed question
+		vocabulary.
+
+\item \textbf{Relevance of Question}
+
+	To select the relevant question, pointer network is used. Pointer
+		network calculates the output word probabilities as a mixture of
+		two probabilities, one over the question vocabulary and the
+		other over the input context vocabulary
 
 \end{itemize}
 
