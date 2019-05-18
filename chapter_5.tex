@@ -16,6 +16,7 @@ software shall then crawl the web and gather links to various web pages relevant
 to the topic given by the user. On getting the links, further the software shall
 scrape those links and parse the HTML pages to get the information content in
 those web pages. 
+
 However, all the content received can be classified into three parts. The first
 part consists of markup language tasks and syntax, the second part shall contain
 data unrelated to the topic of interest, and the third shall be the data which
@@ -78,7 +79,7 @@ best sources for generating questions in test contexts as well.
 	The words in a sentence following these special words were
 	tagged as possible answer words.
 
-	\item Questions based on English Language: The software offers a
+	\item Vocabulary based Questions: The software offers a
 	special feature for improving students language skills. Once the
 	content collection phase is completed, the system identifies
 	difficult and rarely used words in the passage. On
@@ -164,3 +165,89 @@ user. It also generates basic grammar questions and synonym \& antonym words.
 Finally, the system can also generate reading comprehension type of questions,
 wherein the input text on which questions are generated is made available to the
 user while he/she is answering the questions.
+
+\section{Results}
+
+Questions generated after querying terms using the developed system are as
+follows:
+
+\subsection{Query: College of Engineering, Pune}
+
+\begin{figure}
+	\caption{Query: College of Engineering, Pune}
+	\centering\includegraphics[width=12cm]{9.png}
+\end{figure}
+
+Many of the questions generated on the given topic are similar to the Fill in
+the Blanks questions, being quite factual in nature. Most of the questions
+created, not only would be similar to the ones created by domain experts, but as
+a group of questions also appropriately test the knowledge obtained the user
+after reading the material. The overall results obtained are quite encouraging
+to be used for any of the proposed applications.
+
+The blank words are completely factual, which can be answered on the basis of
+one’s general knowledge.  Hence the quality of the questions is quite good.
+However, in a few cases the blanks where the sentence under consideration uses
+pronouns in reference to the answer. In such cases the question cannot be
+answered by anyone without reference to the context of the paragraph.
+
+\subsection{Query: Madhuri Dixit}
+
+\begin{figure}
+	\caption{Query: Madhuri Dixit}
+	\centering\includegraphics[width=12cm]{10.png}
+\end{figure}
+
+Although a reasonable number of quality questions have been generated, some of
+the problems seen in other test results are evident here. The QG-Net model, on
+some occasions substitutes the word ‘beyonce’ in place of a possible noun whose
+pronoun has been used in the original sentence. Unable to get the reference to
+the noun from the overall context, this substitution is used by the model. In a
+few rare cases, the model does not accurately identify the question type and
+hence uses the wrong ‘Wh’ word, in creating the appropriate question.
+
+
+In this case as well, the blank words are factual and hence, the quality of
+questions has been maintained.  The blanks include all aspects of the persons
+life including but not limited to, important dates in the persons life, names of
+popular plays and films and her various roles in the films. However, more than
+one question can be created on a few of the sentences and hence care must be
+taken to provide only one of such questions to the user.
+
+\subsection{Query: Narendra Modi}
+
+\begin{figure}
+	\caption{Query: Narendra Modi}
+	\centering\includegraphics[width=12cm]{11.png}
+\end{figure}
+
+The quality of questions in this case is similar to the one observed in the
+other cases. Alongwith the problem of incorrect identification of the question
+type, a couple of other problems exist in rare cases.  Sometimes, the reference
+to a particular domain gets shifted to another one during computation in the QG
+Net model, which generated a question on Eisenhower, although no reference has
+been made to this person in the article. In a few unstructured sentences, the
+model does not perform well enough and mixes up possible part of phrases with
+one another, eventually generating an incorrect question.
+
+With the text collected being quite detailed, questions have been generated
+around all the activities of the person. Most of the questions created are about
+dates of events, or about names of other people he dealt with throughout his
+life. Such features are largely dependent on the input text and can greatly vary
+depending on the text. As with the size of the input text, the number of
+questions generated has also increased significantly.
+
+\subsection{Vocabulary Based}
+
+Since the vocabulary based questions had similar results on all case studies
+tried out, all the results have been compiled under a common section here. The
+quality of questions generated of synonyms and antonyms was quite good, as they
+were fairly guessable when the paragraph was made available to the user.
+Identifying the appropriate word from the passage given, requires a bit of
+application in a few cases, as the meaning of the word in the context used can
+vary significantly from the one provided in the question. In the case of
+antonyms, a few of the antonym words can be easily obtained by adding
+appropriate prefixes like ‘ir’, ‘un’, etc. However, in other cases, obtaining
+the answer word from the passage given the word opposite in meaning to the
+answer, shall test the vocabulary of the user appropriately.
+

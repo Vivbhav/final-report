@@ -36,7 +36,8 @@ probabilities. That is, prior to applying softmax, some vector components could
 be negative, or greater than one; and might not sum to 1; but after applying
 softmax, each component will be in the interval ( 0 , 1 ), and the components
 shall add up to 1, so that they can be interpreted as probabilities.
-Categorical Cross Entropy:
+
+\subsubsection{Categorical Cross Entropy}
 
 \begin{figure}
 	\caption{Softmax Activation Formula}
@@ -50,7 +51,7 @@ that this model  was extremely heavy for a simple task of tagging answer words.
 Another reason as identified was that training a LSTM requires very large
 dataset. Hence, it was decided to try with a simple linear layer model.
 
-\subsection{Model simple Dense Layer}
+\subsection{Simple Dense Layer Model}
 A simple model containing Dense layers and Sigmoid activation function is built.
 The output of the model is a binary string which contains 0s and 1s where 1
 indicates that the word is a possible answer word and 0 being not an answer
@@ -80,9 +81,17 @@ all weight updates are maintained and the rate does not change during training.
 But in adam optimizer, the learning rate is maintained for each network weight
 and separately adapted as learning unfolds.
 
+
+\subsection{Results of Simple Dense Layer Model}
+
+\begin{figure}[b]
+	\caption{Results of Simple Dense Model}
+	\centering\includegraphics[width=10cm]{12.png}
+\end{figure}
+
 On testing the model on various inputs, it was found out that some words of the
 sentences were tagged as answer words and this was given as input to the QG-Net
-algorithm. On analysis of the generated questions, it was found that some of the
-questions had scope of improvement in terms of getting a natural feel to the
-question or in tagging the probable answer words correctly.
-
+algorithm. On analysis of the generated questions, it was found that the
+questions generated were better than the previous model. On trying out this
+model on few more topics it was found that around 60\% of the questions were
+answerable and grammatically correct.
